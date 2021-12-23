@@ -1,0 +1,26 @@
+*{
+    font-family: monospace;
+}
+#izmeniForm{
+    margin-left: 0%;    
+}
+#btn-izmeni{
+    margin-left: 0%;
+}
+
+#btn-sortiraj{
+    margin-left: 45%;
+}
+
+#btn-obrisi{
+    margin-right: 0%;
+}
+
+#btn,#btn-pretraga{
+    font-weight: bold;
+}
+
+.panel-body{
+    font-weight: bolder;
+    font-style: italic;
+}
