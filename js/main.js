@@ -118,7 +118,6 @@ $('#izmeniForm').submit(function () {
     });
 
 
-    //$('#izmeniModal').modal('hide');
 });
 
 $('#btn-pretraga').click(function () {

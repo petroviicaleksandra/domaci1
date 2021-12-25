@@ -180,7 +180,7 @@ if ($podaci->num_rows == 0) {
                 input = document.getElementById("myInput");
                 filter = input.value.toUpperCase();
                 tabela = document.getElementById("myTable");
-                tr = table.getElementsByTagName("tr");
+                tr = tabela.getElementsByTagName("tr");
                 for (i = 0; i < tr.length; i++) {
                     polje = tr[i].getElementsByTagName("td")[0];
                     if (polje) {
