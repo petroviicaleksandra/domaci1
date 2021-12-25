@@ -87,7 +87,7 @@ if ($podaci->num_rows == 0) {
                     </div>
 
                     <div class="col-md-4" style="text-align: center;">
-                        <button id="btn-sortiraj" class="btn btn-normal #37474f blue-grey darken-3" onclick="sortTable()">Sortiraj</button>
+                        <button id="btn-sortiraj" class="btn btn-normal #37474f blue-grey darken-3" onclick="sortiraj()">Sortiraj</button>
                     </div>
 
                 </div>
@@ -151,41 +151,41 @@ if ($podaci->num_rows == 0) {
         <script src="js/main.js"></script>
 
         <script>
-            function sortTable() {
-                var table, rows, switching, i, x, y, shouldSwitch;
-                table = document.getElementById("myTable");
+            function sortiraj() {
+                var tabela, redovi, switching, i, x, y, zaZamenu;
+                tabela = document.getElementById("myTable");
                 switching = true;
 
                 while (switching) {
                     switching = false;
-                    rows = table.rows;
-                    for (i = 1; i < (rows.length - 1); i++) {
-                        shouldSwitch = false;
-                        x = rows[i].getElementsByTagName("TD")[1];
-                        y = rows[i + 1].getElementsByTagName("TD")[1];
+                    redovi = tabela.rows;
+                    for (i = 1; i < (redovi.length - 1); i++) {
+                        zaZamenu = false;
+                        x = redovi[i].getElementsByTagName("TD")[1];
+                        y = redovi[i + 1].getElementsByTagName("TD")[1];
                         if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                            shouldSwitch = true;
+                            zaZamenu = true;
                             break;
                         }
                     }
-                    if (shouldSwitch) {
-                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    if (zaZamenu) {
+                        redovi[i].parentNode.insertBefore(redovi[i + 1], redovi[i]);
                         switching = true;
                     }
                 }
             }
 
             function funkcijaZaPretragu() {
-                var input, filter, table, tr, td, i, txtValue;
+                var input, filter, tabela, tr, polje, i, vrednost;
                 input = document.getElementById("myInput");
                 filter = input.value.toUpperCase();
-                table = document.getElementById("myTable");
+                tabela = document.getElementById("myTable");
                 tr = table.getElementsByTagName("tr");
                 for (i = 0; i < tr.length; i++) {
-                    td = tr[i].getElementsByTagName("td")[0];
-                    if (td) {
-                        txtValue = td.textContent || td.innerText;
-                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    polje = tr[i].getElementsByTagName("td")[0];
+                    if (polje) {
+                        vrednost = polje.textContent || polje.innerText;
+                        if (vrednost.toUpperCase().indexOf(filter) > -1) {
                             tr[i].style.display = "";
                         } else {
                             tr[i].style.display = "none";
