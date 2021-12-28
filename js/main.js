@@ -120,7 +120,7 @@ $('#izmeniForm').submit(function () {
 
 });
 
-$('#btn-pretraga').click(function () {
+/*$('#btn-pretraga').click(function () {
 
     var para = document.querySelector('#myInput');
     console.log(para);
@@ -133,7 +133,7 @@ $('#btn-pretraga').click(function () {
     } else {
        document.querySelector("#myInput").style.visibility = "hidden";
     }
-});
+});*/
 
 $('#btn').click(function () {
     $('#pregled').toggle();
